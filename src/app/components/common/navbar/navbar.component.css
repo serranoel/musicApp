@@ -1,0 +1,12 @@
+.navbar-element {
+    color: #fff !important;
+    font-size: 1.1rem;
+}
+
+.navbar-element:hover {
+    color: var(--main-color) !important;
+}
+
+.active-link {
+    color: var(--main-color) !important;
+}

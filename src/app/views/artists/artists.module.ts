@@ -1,4 +1,8 @@
 import { NgModule } from '@angular/core';
+import {HttpClientModule} from '@angular/common/http';
+
+//Services
+import { ArtistsService } from 'src/app/services/artists.service';
 
 //Routes
 import { ArtistRoutingModule } from './artists-routing.module';
@@ -12,9 +16,12 @@ import { ArtistsComponent } from './artists.component';
     ArtistsComponent
   ],
   imports: [
-    ArtistRoutingModule
+    ArtistRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    ArtistsService
+  ],
   bootstrap: [
       ArtistsComponent
   ]

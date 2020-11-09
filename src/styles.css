@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+
+body {
+    --main-color: #04f358;
+}
+
+.pointer {
+  cursor: pointer;
+}
