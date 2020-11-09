@@ -12,6 +12,7 @@ import { AlbumFormComponent } from '../../components/album-form/album-form.compo
 import { AlbumDetailsComponent } from '../../components/album-details/album-details.component';
 import { AlbumCardComponent } from '../../components/album-card/album-card.component';
 import { ButtonsComponent } from '../../components/buttons/buttons.component';
+import { ConfirmPopUpComponent } from '../../components/confirm-pop-up/confirm-pop-up.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ButtonsComponent } from '../../components/buttons/buttons.component';
     AlbumFormComponent,
     AlbumDetailsComponent,
     AlbumCardComponent,
-    ButtonsComponent
+    ButtonsComponent,
+    ConfirmPopUpComponent
   ],
   imports: [
     CommonModule,
