@@ -4,6 +4,107 @@ body {
     --main-color: #04f358;
 }
 
+button {
+  background-color: var(--main-color);
+  border: 2px solid var(--main-color);
+  border: none;
+  padding: 9px 25px;
+  font-size: 1.1rem;
+  border-radius: 3px;
+  text-align: right;
+}
+
+button:hover {
+  background-color: #fff;
+  color: var(--main-color);
+  border: 2px solid var(--main-color);
+}
+
+button:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+input:focus {
+  border: 2px solid var(--main-color) !important;
+  box-shadow: none !important;
+  outline: none;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* Generic Styles */
+
 .pointer {
   cursor: pointer;
+}
+
+.white-text {
+  color: #fff;
+}
+
+/* Edit and Delete Buttons */
+
+.edit-button {
+  padding: 10px 35px;
+  background-color: #21a850;
+  border: 2px solid #21a850;
+}
+
+.delete-button {
+  padding: 10px 25px;
+  background-color: #d87e5a;
+  border: 2px solid #d87e5a;
+}
+
+.edit-button:focus,
+.delete-button:focus {
+  outline: none;
+  box-shadow: none;
+  box-shadow: none !important;
+}
+
+.edit-button:hover,
+.delete-button:hover {
+  background-color: #fff;
+}
+
+.edit-button:hover {
+  color:  #21a850;
+  border: 2px solid #21a850;
+}
+
+.edit-button:focus {
+  border: 2px solid #21a850 !important; 
+}
+
+.delete-button:hover {
+  color: #d87e5a;
+  border: 2px solid #d87e5a;
+}
+
+.delete-button:focus {
+  border: 2px solid #d87e5a !important;
+}
+
+/* ReadOnly Inputs */
+
+.readonly {
+  background-color: #a19f9f !important;
+  color: #fff;
+}
+
+.readonly:focus {
+  border: none !important;
+  color: #fff !important;
 }

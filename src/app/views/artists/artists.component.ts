@@ -17,18 +17,18 @@ export class ArtistsComponent {
   subscription: Subscription;
 
   constructor(public _ArtistsService: ArtistsService) { 
-    this.subscription = this._ArtistsService.getAllArtist().subscribe({
-      next(artists) {
-        console.log("hola")
-        console.log(artists);
-      }, 
-      error(err) {
-        console.log(err);
-      },
-      complete() {
-        console.log("Holaaaa");
-      }
-    });
+    // this.subscription = this._ArtistsService.getAllArtist().subscribe({
+    //   next(artists) {
+    //     console.log("hola")
+    //     console.log(artists);
+    //   }, 
+    //   error(err) {
+    //     console.log(err);
+    //   },
+    //   complete() {
+    //     console.log("Holaaaa");
+    //   }
+    //});
   }
 
   

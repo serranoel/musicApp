@@ -15,7 +15,7 @@ const ROUTES: Routes = [
         component: AlbumFormComponent
     },
     {
-        path: 'album',
+        path: 'album/:id',
         component: AlbumDetailsComponent
     }    
 ]
