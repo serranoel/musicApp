@@ -1,13 +1,18 @@
-import { ModuleWithProviders, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { ArtistsComponent } from './artists.component';
+import { ArtistListComponent } from '../../components/artist-list/artist-list.component';
+import { ArtistFormComponent } from '../../components/artist-form/artist-form.component';
 
 const ROUTES: Routes = [
     {
         path: '',
-        component: ArtistsComponent
-    }
+        component: ArtistListComponent,
+    },
+    {
+        path: 'add',
+        component: ArtistFormComponent
+    }      
 ]
 
 @NgModule({

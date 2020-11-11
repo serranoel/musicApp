@@ -2,6 +2,9 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
+//Modules
+import { SharedModule } from '../../sharedModules/shared.module';
+
 //Routes
 import { AlbumRoutingModule } from './albums-routing.module';
 
@@ -12,7 +15,9 @@ import { AlbumFormComponent } from '../../components/album-form/album-form.compo
 import { AlbumDetailsComponent } from '../../components/album-details/album-details.component';
 import { AlbumCardComponent } from '../../components/album-card/album-card.component';
 import { ButtonsComponent } from '../../components/buttons/buttons.component';
-import { ConfirmPopUpComponent } from '../../components/confirm-pop-up/confirm-pop-up.component';
+
+//Pipes
+import { NoImagePipe } from '../../../pipes/no-image.pipe';
 
 @NgModule({
   declarations: [
@@ -22,12 +27,13 @@ import { ConfirmPopUpComponent } from '../../components/confirm-pop-up/confirm-p
     AlbumDetailsComponent,
     AlbumCardComponent,
     ButtonsComponent,
-    ConfirmPopUpComponent
+    NoImagePipe
   ],
   imports: [
     CommonModule,
     FormsModule,
-    AlbumRoutingModule
+    AlbumRoutingModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [

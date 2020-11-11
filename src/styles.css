@@ -2,6 +2,7 @@
 
 body {
     --main-color: #04f358;
+    overflow-x: hidden;
 }
 
 button {
@@ -57,43 +58,38 @@ input[type=number] {
 
 .edit-button {
   padding: 10px 35px;
+  color: #fff;
   background-color: #21a850;
   border: 2px solid #21a850;
 }
 
 .delete-button {
   padding: 10px 25px;
+  color: #fff;
   background-color: #d87e5a;
   border: 2px solid #d87e5a;
 }
 
-.edit-button:focus,
-.delete-button:focus {
-  outline: none;
-  box-shadow: none;
-  box-shadow: none !important;
-}
-
-.edit-button:hover,
-.delete-button:hover {
+.edit-button-hover:hover,
+.delete-button-hover:hover {
   background-color: #fff;
 }
 
-.edit-button:hover {
+.edit-button-hover:hover {
   color:  #21a850;
   border: 2px solid #21a850;
 }
 
-.edit-button:focus {
-  border: 2px solid #21a850 !important; 
-}
-
-.delete-button:hover {
+.delete-button-hover:hover {
   color: #d87e5a;
   border: 2px solid #d87e5a;
 }
 
-.delete-button:focus {
+.edit-button-hover:focus {
+  border: 2px solid #21a850 !important; 
+}
+
+.delete-button-hover:focus {
   border: 2px solid #d87e5a !important;
 }
 
@@ -107,4 +103,47 @@ input[type=number] {
 .readonly:focus {
   border: none !important;
   color: #fff !important;
+}
+
+/* Forms */
+
+hr {
+  border-color: var(--main-color);
+  width: 50%;
+}
+
+.form-container {
+  border: 2px solid var(--main-color);
+  border-radius: 5px;
+  margin-top: 50px !important;
+}
+
+.button-container {
+  height: 55px;
+}
+
+@media (max-width: 992px) {
+  .form-container {
+      width: 85% !important;
+  }
+}
+
+/* Errores Form */
+
+.invalid-format {
+  border: 1.5px solid #cf0625 !important;
+}
+
+.form-error {
+  width: 100%;
+  margin: 0 auto;
+}
+.form-error-message {
+  color: #cf0625 !important;
+  font-size: 0.85rem;
+  margin: 3px 0 0 5px;
+}
+
+.disabled {
+  background-color: #cbf3d9;
 }

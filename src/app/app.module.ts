@@ -8,14 +8,10 @@ import { APP_ROUTING } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/common/navbar/navbar.component';
 
-//Pipes
-import { NoImagePipe } from '../pipes/no-image.pipe';
-
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
-    NoImagePipe
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
