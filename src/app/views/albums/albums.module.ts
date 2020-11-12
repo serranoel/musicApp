@@ -8,6 +8,9 @@ import { SharedModule } from '../../sharedModules/shared.module';
 //Routes
 import { AlbumRoutingModule } from './albums-routing.module';
 
+//Pipes
+import { noGenrePipe } from '../../../pipes/no-genre.pipe';
+
 //Components
 import { AlbumsComponent } from './albums.component';
 import { AlbumsListComponent } from '../../components/albums-list/albums-list.component';
@@ -15,9 +18,6 @@ import { AlbumFormComponent } from '../../components/album-form/album-form.compo
 import { AlbumDetailsComponent } from '../../components/album-details/album-details.component';
 import { AlbumCardComponent } from '../../components/album-card/album-card.component';
 import { ButtonsComponent } from '../../components/buttons/buttons.component';
-
-//Pipes
-import { NoImagePipe } from '../../../pipes/no-image.pipe';
 
 @NgModule({
   declarations: [
@@ -27,7 +27,7 @@ import { NoImagePipe } from '../../../pipes/no-image.pipe';
     AlbumDetailsComponent,
     AlbumCardComponent,
     ButtonsComponent,
-    NoImagePipe
+    noGenrePipe
   ],
   imports: [
     CommonModule,
