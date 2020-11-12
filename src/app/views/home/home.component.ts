@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { Subscribable, Subscription } from 'rxjs';
+import { AlbumsService } from 'src/app/services/albums.service';
+import { ArtistsService } from 'src/app/services/artists.service';
 
 
 @Component({
@@ -8,9 +12,16 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
 
-  constructor() { }
+  postAlbumsSubscription: Subscription;
+  postArtistsSubscription: Subscription;
+
+  constructor(public _albumsService: AlbumsService, public _artistsService: ArtistsService, public _router: Router) { }
 
   createDummyData() {
-    //this._albumService.postAlbums();   
+    this.postAlbumsSubscription = this._albumsService.postAlbums().subscribe(() => {
+      this.postArtistsSubscription = this._artistsService.postArtists().subscribe(() => {
+        this._router.navigate(['/albums']);
+      });
+    });   
   }
 }
