@@ -1,0 +1,13 @@
+p {
+    font-size: 1.2rem;
+}
+
+.home-container {
+    border: 1px solid var(--main-color);
+    border-radius: 10px;
+}
+
+.button-container {
+    height: 100px;
+}
+

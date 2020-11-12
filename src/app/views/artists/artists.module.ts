@@ -5,14 +5,8 @@ import { FormsModule } from '@angular/forms';
 //Modules
 import { SharedModule } from '../../sharedModules/shared.module';
 
-//Services
-import { ArtistsService } from 'src/app/services/artists.service';
-
 //Routes
 import { ArtistRoutingModule } from './artists-routing.module';
-
-//Services
-import {HttpClientModule} from '@angular/common/http'
 
 //Components
 import { ArtistsComponent } from './artists.component';
@@ -31,11 +25,9 @@ import { ArtistCardComponent } from '../../components/artist-card/artist-card.co
     CommonModule,
     ArtistRoutingModule,
     SharedModule,
-    HttpClientModule,
     FormsModule
   ],
   providers: [
-    ArtistsService
   ],
   bootstrap: [
       ArtistsComponent
