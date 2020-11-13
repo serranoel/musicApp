@@ -1,13 +1,14 @@
 import { Component, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AlbumsService } from 'src/app/services/albums.service';
+import { Subscription } from 'rxjs';
 
 //Interfaces
 import { Album } from 'src/app/interfaces/album.model';
 import { Artist } from 'src/app/interfaces/artist.model';
-import { Subscription } from 'rxjs';
-import { IfStmt, THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+ 
+//Services
 import { ArtistsService } from 'src/app/services/artists.service';
+import { AlbumsService } from 'src/app/services/albums.service';
 
 @Component({
   selector: 'app-album-details',

@@ -1,0 +1,21 @@
+div {
+    position: absolute;
+    top: 117px;
+    left: 117px;
+}
+
+button {
+    background-color: var(--main-color);
+    color: #9e9e9e;
+    border-radius: 25px;
+}
+
+button:hover {
+    background-color: #fff;
+}
+
+@media (max-width: 992px) {
+    div {
+        display: none;
+    }
+  }
