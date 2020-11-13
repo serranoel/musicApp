@@ -1,0 +1,18 @@
+<div class="artist-container text-center mt-3 mb-5 mr-2 ml-2 p-3" >
+    <div class="artist-image">
+        <img [src]="artist.photoUrl | noImage:'artist'">
+    </div>
+    <div class="artist-name mt-4 text-white">
+        <p>{{ artist.name }}</p>
+    </div>
+    <div class="artist-menu text-white pointer" (click)="isMenuOpen = !isMenuOpen">
+        <span><i class="fas fa-ellipsis-v"></i></span>
+    </div>
+    <div *ngIf="isMenuOpen" class="artist-modal bg-white">
+        <ul class="m-0 p-0">
+            <li class="pt-2 pb-1 pointer" (click)="associateSong()">Asociar Canción</li>
+            <li class="pt-1 pb-2 pointer" (click)="sendDeleteActivation()" (click)="sendId()">Eliminar</li>
+        </ul>
+    </div>
+</div>
+

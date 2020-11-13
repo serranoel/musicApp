@@ -1,0 +1,19 @@
+<div *ngIf="albums">
+    <div *ngIf="albums.length == 0" class="mt-5">
+        <h1 class="white-text w-75 float-left">No has guardado ningún album todavía.</h1>
+        <button class="white-text float-right mt-1" [routerLink]="['add']">Añadir Album</button>
+    </div>
+    <div *ngIf="albums.length > 0" class="mt-5">
+        <div class="clearfix">
+            <h1 class="white-text w-75 float-left">Estos son todos tus albums guardados:</h1>
+            <button class="white-text float-right mt-1" [routerLink]="['add']">Añadir Album</button>
+        </div>
+        
+        <div class="row mt-5">
+            <div *ngFor="let album of albums" class="col-xl-3 col-md-4 col-sm-6 col-12 m-auto">
+                <app-album-card [album]="album"></app-album-card>
+            </div>
+        </div>    
+    </div> 
+</div>
+

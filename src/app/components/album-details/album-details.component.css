@@ -1,0 +1,15 @@
+img {
+    width: 80%;
+}
+
+.confirm-buttons {
+    text-align: center;
+}
+
+.cancel-button {
+    background-color: #7eca99;
+}
+
+.cancel-button:hover {
+    background-color: #fff;
+}

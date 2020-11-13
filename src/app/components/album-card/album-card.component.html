@@ -1,0 +1,7 @@
+<div class="card mb-4 pointer album-container text-white" [routerLink]="['album', album._id]">
+    <img [src]="album.coverUrl | noImage:'album'" class="card-img-top image">
+    <div class="card-body">
+        <h6 class="card-title text-center">{{ album.title }}</h6>
+        <p class="card-text text-center">{{ album.genre | noGenre }}</p>
+    </div>
+</div>

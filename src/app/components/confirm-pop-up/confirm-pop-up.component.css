@@ -1,0 +1,16 @@
+.modal-container {
+    height: 100%;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(156, 154, 154, 0.5);
+    border-radius: 5px;
+}
+
+.confirm-modal { 
+    margin: 0 auto;
+    width: 300px;
+    border: 2px solid var(--main-color);
+    border-radius: 5px;    
+}

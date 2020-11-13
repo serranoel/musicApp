@@ -1,0 +1,21 @@
+<div *ngIf="artists">
+    <div *ngIf="artists.length == 0" class="mt-5">
+        <h1 class="white-text w-75 float-left">No has guardado ningún artista todavía.</h1>
+        <button class="white-text float-right mt-1" [routerLink]="['add']"GIT>Añadir Artista</button>
+    </div>
+    <div *ngIf="artists.length > 0" class="mt-5">
+        <div class="clearfix">
+            <h1 class="white-text w-75 float-left">Estos son todos tus artistas guardados:</h1>
+            <button class="white-text float-right mt-1" [routerLink]="['add']">Añadir Artista</button>
+        </div>
+        
+        <div class="row mt-5">
+            <div *ngFor="let artist of artists" class="col-lg-3 col-md-4 col-sm-6">
+                <app-artist-card [artist]="artist" (deleteEvent)="activateDelete($event)" (idEvent)="getIdToDelete($event)"></app-artist-card>
+            </div>
+        </div>    
+    </div>
+</div>
+
+<!-- Modal -->
+<app-confirm-pop-up *ngIf="deleteActive" [id]="id" [entity]="'artist'" (cancelEvent)="closeModal($event)"></app-confirm-pop-up>

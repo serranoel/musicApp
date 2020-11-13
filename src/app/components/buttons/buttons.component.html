@@ -1,0 +1,8 @@
+<div class="row w-75 text-center m-auto pt-4 button-container">
+    <div class="col-lg-6 col-md-12 mb-4">
+        <button class="edit-button" [ngClass]="{'edit-button-hover' : !deleteActive}" (click)="sendEditActivation()" [disabled]="editActive || deleteActive">Editar</button>
+    </div>
+    <div class="col-lg-6 col-md-12">
+        <button class="delete-button delete-button-hover" [ngClass]="{'delete-button-hover' : !deleteActive}" (click)="sendDeleteActivation()" [disabled]="editActive || deleteActive">Eliminar</button>
+    </div>
+</div>

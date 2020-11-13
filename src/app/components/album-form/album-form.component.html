@@ -1,0 +1,35 @@
+<form #albumForm = "ngForm" (ngSubmit) = "sendAlbumData(albumForm)" autocomplete="off" class="form-container w-50 m-auto pl-5 pr-5 pt-4 pb-4">
+    <h2 class="white-text text-center">Añade un nuevo album</h2>
+    <hr class="mt-4 mb-4">
+    <div class="form-group">
+        <label class="white-text" for="title">Título del Album:*</label>
+        <input #albumTitle="ngModel" [(ngModel)] = "title" name="title" required [ngClass] = "{'invalid-format': (albumTitle.invalid && albumTitle.dirty && albumTitle.touched) || (albumTitle.invalid && albumTitle.pristine && albumTitle.touched)}" type="text" class="form-control" id="title" placeholder="Título">
+        <div class="form-error" *ngIf = "albumTitle.invalid">
+            <p class="form-error-message">
+                <span *ngIf="(albumTitle.invalid && albumTitle.dirty && albumTitle.touched )">
+                    Este campo es obligatorio.
+                </span>
+            </p> 
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="white-text" for="cover">Imagen de Portada</label>
+        <input [(ngModel)] = "coverUrl" name="coverUrl" type="text" class="form-control" id="cover" placeholder="URL cover">
+    </div>
+    <div class="row">
+        <div class="col-xl-6 col-md-12 form-group">
+            <label class="white-text" for="genre">Género Musical</label>
+            <input [(ngModel)] = "genre" name="genre" type="text" class="form-control" id="genre" placeholder="Ej: Hip Hop">
+        </div>
+        <div class="col-xl-6 col-md-12 form-group">
+            <label class="white-text" for="year">Año del Lanzamiento</label>
+            <input [(ngModel)] = "year" name="year" type="number" class="form-control" id="year" min="1909" max="2030" placeholder="Ej: 2020">
+        </div>
+    </div> 
+    <div class="button-container text-center w-100 mb-1">
+        <button [disabled]="(albumForm.invalid || formSubmited)" [ngClass]="{disabled : albumForm.invalid}" class="white-text mt-2">Añadir</button>
+    </div>  
+</form>
+
+
+

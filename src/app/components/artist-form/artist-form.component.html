@@ -1,0 +1,22 @@
+<form #artistForm = "ngForm" (ngSubmit) = "sendArtistData(artistForm)" autocomplete="off" class="form-container w-50 m-auto pl-5 pr-5 pt-4 pb-4">
+    <h2 class="white-text text-center">Añade un nuevo artista</h2>
+    <hr class="mt-4 mb-4">
+    <div class="form-group">
+        <label class="white-text" for="title">Nombre del artista:*</label>
+        <input #artistName="ngModel" [(ngModel)] = "name" name="name" required [ngClass] = "{'invalid-format': (artistName.invalid && artistName.dirty && artistName.touched) || (artistName.invalid && artistName.pristine && artistName.touched)}" type="text" class="form-control" id="name" placeholder="Artista">
+        <div class="form-error" *ngIf = "artistName.invalid">
+            <p class="form-error-message">
+                <span *ngIf="(artistName.invalid && artistName.dirty && artistName.touched )">
+                    Este campo es obligatorio.
+                </span>
+            </p> 
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="white-text" for="photoUrl">Imagen de Portada</label>
+        <input [(ngModel)] = "photoUrl" name="photoUrl" type="text" class="form-control" id="photoUrl" placeholder="URL imagen">
+    </div>
+    <div class="button-container text-center w-100 mb-1">
+        <button [disabled]="(artistForm.invalid || formSubmited)" [ngClass]="{disabled : artistForm.invalid}" class="white-text mt-2">Añadir</button>
+    </div>  
+</form>

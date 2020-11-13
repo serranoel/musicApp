@@ -1,0 +1,40 @@
+<div class="container mt-5">
+    <div *ngIf="album" class="row mt-5 pt-4">
+        <div class="col-lg-6 col-sm-12 text-center">
+            <img [src]="album.coverUrl | noImage:'album'">
+            <h4 *ngIf="artist" class="mt-4 text-white">{{ artist.name }}</h4>
+        </div>
+        <div class="col-lg-6 col-sm-12 mt-4">
+            <div class="form-group">
+                <label class="white-text" for="title">Título del Album</label>
+                <input [(ngModel)] = "album.title" name="album.title" [readonly]="!editActive" [ngClass]="{readonly : !editActive}" type="text" class="form-control" id="title" placeholder="Título del Album">
+            </div>
+            <div class="form-group">
+                <label class="white-text" for="cover">Imagen de Portada</label>
+                <input [(ngModel)] = "album.coverUrl" name="album.coverUrl" [readonly]="!editActive" [ngClass]="{readonly : !editActive}" type="text" class="form-control" id="cover" placeholder="URL cover">
+            </div>
+            <div class="row">
+                <div class="form-group col-lg-6 col-md-12">
+                    <label class="white-text" for="genre">Género Musical</label>
+                    <input [(ngModel)] = "album.genre" name="album.genre" [readonly]="!editActive" [ngClass]="{readonly : !editActive}" type="text" class="form-control w-100" id="genre" placeholder="Ej: Hip Hop">
+                </div>
+                <div class="form-group col-lg-6 col-md-12">
+                    <label class="white-text" for="year">Año del Lanzamiento</label>
+                    <input [(ngModel)] = "album.year" name="album.year" [readonly]="!editActive" [ngClass]="{readonly : !editActive}" type="number" class="form-control w-100" id="year" placeholder="Ej: 2020">
+                </div>
+            </div>
+            <!-- Edit / Delete Buttons -->
+            <app-buttons *ngIf="!editActive" (editEvent)="activateEdit($event)" (deleteEvent)="activateDelete($event)" [deleteActive]="deleteActive"></app-buttons>            
+            <!-- Edit Buttons -->
+            <div *ngIf="editActive" class="confirm-buttons mt-4">
+                <button (click)="putAlbum()" class="mr-3">Guardar</button>
+                <button (click)="editActive = false" class="ml-3 cancel-button">Cancelar</button>
+            </div>
+        </div>
+    </div>
+    <!-- Confirm Modal -->
+    <app-confirm-pop-up *ngIf="deleteActive" [id]="album._id" [entity]="'album'" (cancelEvent)="closeModal($event)"></app-confirm-pop-up>
+</div>
+
+
+
