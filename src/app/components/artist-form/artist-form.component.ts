@@ -30,13 +30,17 @@ export class ArtistFormComponent {
     this.formSubmited = true;
       if(form.valid) {
         let artist: Artist = this.createArtist();
-        this.postArtisSubscription = this._artistsService.postArtist(artist).subscribe(() => {
-          this._router.navigate(['/artists']);
-        });        
+        this.postArtist(artist);       
       } else {
         form.reset();
         this.formSubmited = false;
       }
+  }
+
+  postArtist(artist: Artist) {
+    this.postArtisSubscription = this._artistsService.postArtist(artist).subscribe(() => {
+      this._router.navigate(['/artists']);
+    }); 
   }
 
   createArtist() {

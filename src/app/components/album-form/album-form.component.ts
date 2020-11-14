@@ -35,9 +35,7 @@ export class AlbumFormComponent {
     this.formSubmited = true;
       if(form.valid) {
         let newAlbum: Album = this.createAlbum();
-        this.postAlbumSubscription = this._albumsService.postAlbum(newAlbum).subscribe((a: Album) => {
-          this._router.navigate(['/albums', 'album', a._id]);
-        });        
+        this.postAlbum(newAlbum);       
       } else {
         form.reset();
         this.formSubmited = false;
@@ -54,8 +52,13 @@ export class AlbumFormComponent {
     if(this.artistId) {
       album['artistId'] = this.artistId;
     }
-    return album;
-     
+    return album;     
+  }
+
+  postAlbum(album: Album) {
+    this.postAlbumSubscription = this._albumsService.postAlbum(album).subscribe((a: Album) => {
+      this._router.navigate(['/albums', 'album', a._id]);
+    }); 
   }
 
   ngOnDestroy() {
